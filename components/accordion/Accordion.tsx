@@ -7,14 +7,14 @@ interface AccordionProps {
 
 export const Accordion = ({ children, title }: AccordionProps) => {
   const [accordionOpen, setAccordionState] = useState<boolean>(false);
-	const accordionEl = useRef<HTMLDivElement>();
+	const accordionCollapseEl = useRef<HTMLDivElement>();
 	const accordionContentEl = useRef<HTMLDivElement>();
 
 	useEffect(() => {
 		if(accordionOpen) {
-			accordionEl.current.style.maxHeight = `${accordionContentEl.current.clientHeight}px`;
+			accordionCollapseEl.current.style.maxHeight = `${accordionContentEl.current.clientHeight}px`;
 		} else {
-			accordionEl.current.style.maxHeight = "0px";
+			accordionCollapseEl.current.style.maxHeight = "0px";
 		}
 	}, [accordionOpen])
 
@@ -26,7 +26,7 @@ export const Accordion = ({ children, title }: AccordionProps) => {
       >
         <p>{title}</p>
       </div>
-      <div ref={accordionEl} className="accordion__content bg-gray-200 transition-all duration-300 overflow-hidden">
+      <div ref={accordionCollapseEl} className="accordion__content bg-gray-200 transition-all duration-300 overflow-hidden">
         <div ref={accordionContentEl} className="accordion__content-inner">
           {children}
         </div>
