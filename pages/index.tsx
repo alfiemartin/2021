@@ -15,7 +15,7 @@ export default function Home() {
         </Accordion>
       </div>
 
-      <Toast /> 
+      <Toast></Toast> 
     </div>
   );
 }
