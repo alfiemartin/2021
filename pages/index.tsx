@@ -4,6 +4,7 @@ import {Accordion} from "../components/accordion/Accordion";
 import Image from "next/image";
 
 import image from "../public/image2.jpg";
+import { Toast } from "../components/accordion/toast/toast";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
           <Image src={image} layout="responsive" />
         </Accordion>
       </div>
+
+      <Toast /> 
     </div>
   );
 }
