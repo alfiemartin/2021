@@ -1,9 +1,19 @@
 import type { ReactElement } from "react";
 import LayoutContained from "../components/layouts/LayoutContained";
+import {Accordion} from "../components/accordion/Accordion";
+import Image from "next/image";
+
+import image from "../public/image2.jpg";
 
 export default function Home() {
   return (
-    <h1>Home</h1>
+    <div className="h-screen">
+      <div className="w-96 h-96 mx-auto mt-8">
+        <Accordion title="title">
+          <Image src={image} layout="responsive" />
+        </Accordion>
+      </div>
+    </div>
   );
 }
 
