@@ -1,19 +1,16 @@
-import Head from "next/head";
 import type { ReactElement } from "react";
-import Layout from "../components/layouts/Layout";
+import LayoutContained from "../components/layouts/LayoutContained";
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
-
-    </div>
+    <h1>Home</h1>
   );
 }
 
-Home.getLayout = function getLayout(page: ReactElement) {
+Home.getLayout = (page: ReactElement) => {
   return (
-    <Layout>
+    <LayoutContained>
       {page}
-    </Layout>
+    </LayoutContained>
   )
 }

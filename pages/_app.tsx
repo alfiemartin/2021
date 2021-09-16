@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
-import { AppProps } from 'next/dist/shared/lib/router/router';
-import Head from 'next/head';
+import { AppProps } from 'next/app';
 import { ReactElement, ReactNode } from 'react';
 import 'tailwindcss/tailwind.css'
+import Layout from '../components/layouts/Layout';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -13,7 +13,7 @@ type AppPropsWithLayout = AppProps & {
 }
 
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const getLayout = Component.getLayout ?? ((page: ReactElement) => page)
+  const getLayout = Component.getLayout ?? ((page: ReactElement) => <Layout>{page}</Layout>)
 
   return(
     getLayout(<Component {...pageProps} />)
