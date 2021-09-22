@@ -4,6 +4,7 @@ import {Accordion} from "../components/accordion/Accordion";
 import Image from "next/image";
 
 import image from "../public/image2.jpg";
+import CompoundAccordion from "../components/compoundAccordion/CompoundAccordion";
 
 export default function Home() {
   return (
@@ -13,6 +14,29 @@ export default function Home() {
           <Image src={image} layout="responsive" />
         </Accordion>
       </div>
+
+      <div className="w-1/3">
+        <CompoundAccordion>
+          <CompoundAccordion.Item>
+            <CompoundAccordion.ItemTitle>
+              Text
+            </CompoundAccordion.ItemTitle>
+            <CompoundAccordion.ItemContent>
+              <Image src={image} layout="responsive" />
+            </CompoundAccordion.ItemContent>
+          </CompoundAccordion.Item>
+          <CompoundAccordion.Item>
+            <CompoundAccordion.ItemTitle>
+              Text
+            </CompoundAccordion.ItemTitle>
+            <CompoundAccordion.ItemContent>
+              <Image src={image} layout="responsive" />
+            </CompoundAccordion.ItemContent>
+          </CompoundAccordion.Item>
+        </CompoundAccordion>
+      </div>
+      
+
     </div>
   );
 }
