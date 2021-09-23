@@ -8,10 +8,10 @@ import Accordion, {AccordionItem, AccordionItemContent, AccordionItemTitle} from
 export default function Home() {
   return (
       <div className="w-1/3 mt-8">
-        <Accordion>
+        <Accordion styling="blue">
           <AccordionItem>
             <AccordionItemTitle>
-              <p className="bg-red-300 text-center">Hello</p>
+              Hello
             </AccordionItemTitle>
             <AccordionItemContent>
               <Image src={image} layout="responsive" />
@@ -19,19 +19,17 @@ export default function Home() {
           </AccordionItem>
           <AccordionItem>
             <AccordionItemTitle>
-              <div className="flex h-6 relative">
-                <div className="flex-1 bg-blue-300"></div>
-                <div className="flex-1 bg-red-400"></div>
-                <div className="absolute w-full text-center">World</div>
-              </div>
+              Hello
             </AccordionItemTitle>
             <AccordionItemContent>
-              <Image src={image} layout="responsive" />
+              <h1>This is a title</h1>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam quos ab, mollitia qui incidunt dignissimos molestias optio provident sunt veritatis?</p>
+              <h2>This is a h2</h2>
             </AccordionItemContent>
           </AccordionItem>
           <AccordionItem>
             <AccordionItemTitle>
-              <p className="text-center bg-gray-500 text-gray-100">Accordions</p>
+              Hello
             </AccordionItemTitle>
             <AccordionItemContent>
               <Image src={image} layout="responsive" />
