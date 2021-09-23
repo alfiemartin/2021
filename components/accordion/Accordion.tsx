@@ -22,12 +22,12 @@ export const Accordion = ({ children, title }: AccordionProps) => {
     <div className="border-2 border-black">
       <div
         onClick={() => setAccordionState((prev) => !prev)}
-        className="h-8 flex items-center p-2 bg-gray-300"
+        className="title h-8 flex items-center p-2 bg-gray-300"
       >
         <p>{title}</p>
       </div>
-      <div ref={accordionCollapseEl} className="bg-gray-200 transition-all duration-300 overflow-hidden">
-        <div ref={accordionContentEl}>
+      <div ref={accordionCollapseEl} className="contentWrapper bg-gray-200 transition-all duration-300 overflow-hidden">
+        <div ref={accordionContentEl} className="content">
           {children}
         </div>
       </div>
