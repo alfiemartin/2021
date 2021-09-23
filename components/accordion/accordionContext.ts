@@ -10,9 +10,10 @@ export interface AccordionItemProps {
 }
 
 export interface TAccordionContext {
-    setActiveItems?: React.Dispatch<React.SetStateAction<[number]>>;
-    activeItems?: [number];
-    itemRefs?: React.MutableRefObject<any[]>;
+    setActiveItems?: React.Dispatch<React.SetStateAction<number[]>>;
+    activeItems?: number[];
+    wrapperRefs?: React.MutableRefObject<any[]>;
+    contentRefs?: React.MutableRefObject<any[]>;
 }
 
 export const AccordionContext = createContext<TAccordionContext>({});

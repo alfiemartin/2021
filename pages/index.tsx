@@ -1,43 +1,44 @@
 import type { ReactElement } from "react";
 import LayoutContained from "../components/layouts/LayoutContained";
-import {Accordion} from "../components/accordion/Accordion";
 import Image from "next/image";
 
 import image from "../public/image2.jpg";
-import CompoundAccordion from "../components/compoundAccordion/CompoundAccordion";
+import Accordion, {AccordionItem, AccordionItemContent, AccordionItemTitle} from "../components/Accordion/Accordion";
 
 export default function Home() {
   return (
-    <div className="h-screen">
-      <div className="w-96 h-96 mx-auto mt-8">
-        <Accordion title="title">
-          <Image src={image} layout="responsive" />
+      <div className="w-1/3 mt-8">
+        <Accordion>
+          <AccordionItem>
+            <AccordionItemTitle>
+              <p className="bg-red-300 text-center">Hello</p>
+            </AccordionItemTitle>
+            <AccordionItemContent>
+              <Image src={image} layout="responsive" />
+            </AccordionItemContent>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemTitle>
+              <div className="flex h-6 relative">
+                <div className="flex-1 bg-blue-300"></div>
+                <div className="flex-1 bg-red-400"></div>
+                <div className="absolute w-full text-center">World</div>
+              </div>
+            </AccordionItemTitle>
+            <AccordionItemContent>
+              <Image src={image} layout="responsive" />
+            </AccordionItemContent>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemTitle>
+              <p className="text-center bg-gray-500 text-gray-100">Accordions</p>
+            </AccordionItemTitle>
+            <AccordionItemContent>
+              <Image src={image} layout="responsive" />
+            </AccordionItemContent>
+          </AccordionItem>
         </Accordion>
       </div>
-
-      <div className="w-1/3">
-        <CompoundAccordion>
-          <CompoundAccordion.Item>
-            <CompoundAccordion.ItemTitle>
-              Text
-            </CompoundAccordion.ItemTitle>
-            <CompoundAccordion.ItemContent>
-              <Image src={image} layout="responsive" />
-            </CompoundAccordion.ItemContent>
-          </CompoundAccordion.Item>
-          <CompoundAccordion.Item>
-            <CompoundAccordion.ItemTitle>
-              Text
-            </CompoundAccordion.ItemTitle>
-            <CompoundAccordion.ItemContent>
-              <Image src={image} layout="responsive" />
-            </CompoundAccordion.ItemContent>
-          </CompoundAccordion.Item>
-        </CompoundAccordion>
-      </div>
-      
-
-    </div>
   );
 }
 
