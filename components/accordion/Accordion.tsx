@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useRef, useState } from 'react'
-import { AccordionProps, AccordionContext, AccordionItemProps, useAccordionContext, StylingType, getStyling } from './accordionContext';
+import { AccordionProps, AccordionContext, AccordionItemProps, useAccordionContext, getStyling } from './accordionContext';
 
 const Accordion = ({children, styling="none"}: AccordionProps) => {
     const [activeItems, setActiveItems] = useState<number[]>([]);
@@ -51,7 +51,7 @@ const AccordionItemTitle = ({children, id}: AccordionItemProps) => {
 
     const updateActiveItems = () => {
         
-        if(itemIsActive(id)) { //if pressed accordion item is present in active list.
+        if(itemIsActive(id)) { 
             setActiveItems(currentActiveItems => currentActiveItems.filter((value) => value !== id));
         } else {
             setActiveItems(currentActiveItems => [...currentActiveItems, id])

@@ -3,30 +3,13 @@ import LayoutContained from "../components/layouts/LayoutContained";
 import Image from "next/image";
 
 import image from "../public/image2.jpg";
-import Accordion, {AccordionItem, AccordionItemContent, AccordionItemTitle} from "../components/Accordion/Accordion";
+import Accordion, {AccordionItem, AccordionItemContent, AccordionItemTitle} from "../components/accordion/Accordion";
 
 export default function Home() {
   return (
+    <div className="flex justify-between">
       <div className="w-1/3 mt-8">
-        <Accordion styling="blue">
-          <AccordionItem>
-            <AccordionItemTitle>
-              Hello
-            </AccordionItemTitle>
-            <AccordionItemContent>
-              <Image src={image} layout="responsive" />
-            </AccordionItemContent>
-          </AccordionItem>
-          <AccordionItem>
-            <AccordionItemTitle>
-              Hello
-            </AccordionItemTitle>
-            <AccordionItemContent>
-              <h1>This is a title</h1>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam quos ab, mollitia qui incidunt dignissimos molestias optio provident sunt veritatis?</p>
-              <h2>This is a h2</h2>
-            </AccordionItemContent>
-          </AccordionItem>
+        <Accordion styling="none">
           <AccordionItem>
             <AccordionItemTitle>
               Hello
@@ -37,6 +20,19 @@ export default function Home() {
           </AccordionItem>
         </Accordion>
       </div>
+      <div className="w-1/3 mt-8">
+      <Accordion styling="none">
+        <AccordionItem>
+          <AccordionItemTitle>
+            Hello
+          </AccordionItemTitle>
+          <AccordionItemContent>
+            <Image src={image} layout="responsive" />
+          </AccordionItemContent>
+        </AccordionItem>
+      </Accordion>
+    </div>
+    </div>
   );
 }
 

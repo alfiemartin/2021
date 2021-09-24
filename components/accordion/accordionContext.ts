@@ -1,6 +1,6 @@
 import { createContext, ReactElement, ReactNode, useContext } from "react";
 
-export type StylingType = "default" | "dark" | "blue" | "none";
+type StylingType = "default" | "dark" | "blue" | "none";
 
 export interface GetStyling {
     accordionStyles: string;
